@@ -7,7 +7,7 @@ const ContactPersonSchema = new Schema({
   last_name: { type: String, required: true, maxlength: 50 },
   email: { type: String, required: true, maxlength: 50, unique: true },
   mobile_phone: { type: String, maxlength: 20, validate: /^\d{0,20}$/ },
-  birth_date: { type: String }, // You might want to use a Date type here
+  birth_date: { type: String }, // TODO: fix birth date format
   address: { type: Schema.Types.ObjectId, ref: "Address" },
 });
 
