@@ -1,4 +1,3 @@
-// src/routes/customerRoutes.ts
 import express from "express";
 import {
   getAllCustomers,

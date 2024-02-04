@@ -1,4 +1,3 @@
-// src/models/Customer.ts
 import mongoose, { Schema, Document } from "mongoose";
 
 // Define ContactPerson schema

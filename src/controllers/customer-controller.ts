@@ -1,4 +1,3 @@
-// src/controllers/customerController.ts
 import { Request, Response } from "express";
 import { Customer, ContactPerson, Address } from "../models/customer";
 
