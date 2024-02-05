@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-// Define ContactPerson schema
+// ContactPersons
 const ContactPersonSchema = new Schema({
   first_name: { type: String, required: true, maxlength: 50 },
   last_name: { type: String, required: true, maxlength: 50 },
@@ -10,13 +10,12 @@ const ContactPersonSchema = new Schema({
   address: { type: Schema.Types.ObjectId, ref: "Address" },
 });
 
-// Define Address schema
+// Addresses
 const AddressSchema = new Schema({
   company_name: {
     type: String,
     required: function (this: { type: string }) {
-      // Explicitly specify 'this' type
-      return this.type === "COMPANY" || this.type === "DEALER";
+       return this.type === "COMPANY" || this.type === "DEALER";
     },
     maxlength: 50,
   },
@@ -31,13 +30,12 @@ const AddressSchema = new Schema({
     maxlength: 50,
     unique: true,
     required: function (this: { type: string }) {
-      // Explicitly specify 'this' type
       return this.type === "COMPANY" || this.type === "DEALER";
     },
   },
 });
 
-// Define Customer schema
+// Customers
 const CustomerSchema = new Schema({
   intnr: { type: String, required: true, unique: true, maxlength: 10 },
   type: {
@@ -51,7 +49,7 @@ const CustomerSchema = new Schema({
   updated_at: { type: Date, default: Date.now },
 });
 
-// Create models for ContactPerson, Address, and Customer
+// Create the models for ContactPerons, Addresses and Customers
 const ContactPerson = mongoose.model("ContactPerson", ContactPersonSchema);
 const Address = mongoose.model("Address", AddressSchema);
 const Customer = mongoose.model("Customer", CustomerSchema);

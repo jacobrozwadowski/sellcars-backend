@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-// Define routes
+// Define customer routes
 router.get("/customers", getAllCustomers);
 router.get("/customers/:id", getCustomerById);
 router.post("/customers", createCustomer);

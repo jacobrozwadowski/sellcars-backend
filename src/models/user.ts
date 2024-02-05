@@ -42,7 +42,7 @@ const userSchema = new Schema<UserDocument>(
     },
   },
   {
-    timestamps: true, // Automatically add createdAt and updatedAt fields
+    timestamps: true, // automatically adds createdAt and updatedAt fields
   }
 );
 
